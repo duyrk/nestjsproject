@@ -1,7 +1,7 @@
 // controller: là nơi xử lý các request từ client
 import { Controller, Get, Post, Body, Query, Param, Res, Delete,Req ,HttpStatus, HttpCode} from "@nestjs/common";
 import { ProductService } from "./product.service";
-import { ProductInsertRequestDTO } from "./dto/product_insert_request.dto";
+import { ProductInsertRequestDTO } from "./dto/user_register_request.dto";
 import { Response, Request } from "express";
 import { ProductGetRequestDTO } from "./dto/product_get_request.dto";
 import { ProductUpdateRequestDTO } from "./dto/product_update_request.dto";

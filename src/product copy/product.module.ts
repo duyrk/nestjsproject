@@ -5,7 +5,7 @@ import { Module, NestModule, MiddlewareConsumer  } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProductService } from './product.service';
 import { ProductController } from './product.controller';
-import { ProductSchema, Product} from './product.schema';
+import { ProductSchema, Product} from './user.schema';
 import { LoggerMiddleware } from 'src/middlewares/logger.middleware';
 import { ProductQueryMiddleWare } from 'src/middlewares/product_query.middleware';
 @Module({
