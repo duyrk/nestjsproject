@@ -1,6 +1,6 @@
 import { User } from "../user.entity";
 
 
-export class UserRegisterRequestDTO extends User{
+export class UserRegisterRequestDTO extends User {
     confirmPassword: string;
 }

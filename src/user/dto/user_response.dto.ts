@@ -1,6 +1,6 @@
 import { User } from "../user.entity";
 
-export class UserResponseDTO{
+export class UserResponseDTO {
     status: Boolean;
     message: String;
     data: any;
