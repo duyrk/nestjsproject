@@ -1,4 +1,4 @@
-export class ProductDeleteResponseDTO {
+export class CategoryDeleteResponseDTO {
     status: Boolean;
     message: String;
 }

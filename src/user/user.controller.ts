@@ -21,6 +21,7 @@ export class UserController {
             return res.status(HttpStatus.BAD_REQUEST).json(error);
         }
     }
+    //url: http://localhost:3000/user/login
     @Post('login')
     async login(@Body() body: UserLoginRequestDTO, @Res() res: Response) {
         try {
@@ -30,6 +31,7 @@ export class UserController {
             return res.status(HttpStatus.BAD_REQUEST).json(error);
         }
     }
+    //url: http://localhost:3000/user/getAll
     @UseGuards(AuthGuard)
     @Get('getAll')
     async getAll(@RequestNest() req: Request, @Res() res: Response) {
@@ -40,6 +42,7 @@ export class UserController {
             return res.status(HttpStatus.BAD_REQUEST).json(error);
         }
     }
+    //url: http://localhost:3000/user/refresh-token
     @Post('refresh-token')
     async refreshToken(@Body() body: any, @Res() res: Response) {
         try {
@@ -49,7 +52,7 @@ export class UserController {
             return res.status(HttpStatus.BAD_REQUEST).json(error);
         }
     }
-
+//url: http://localhost:3000/user/home tren website
     @Get('home')
     @Render('index')
     async home(@Res() res: Response) {

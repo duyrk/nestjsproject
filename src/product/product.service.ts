@@ -17,6 +17,7 @@ export class ProductService {
     private readonly productModel: Model<ProductDocument>) { }
 
     async insert(requestDTO: ProductInsertRequestDTO): Promise<ProductInsertResponseDTO> {
+
         const product = new this.productModel(requestDTO);
         await product.save();
         const responseDTO: ProductInsertResponseDTO = {

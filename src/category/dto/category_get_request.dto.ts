@@ -1,9 +1,8 @@
 
 
-export class ProductGetRequestDTO {
+export class CategoryGetRequestDTO {
     name: string;
     price: number;
     quantity: number;
-    image: string;
     description: string;
 }

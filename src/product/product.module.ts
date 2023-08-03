@@ -1,13 +1,14 @@
 
 // module trong nestjs là một tập hợp cẩu các controller, service, module khác
 
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer, RequestMethod } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ProductService } from './product.service';
 import { ProductController } from './product.controller';
 import { ProductSchema, Product } from './product.schema';
 import { LoggerMiddleware } from 'src/middlewares/logger.middleware';
 import { ProductQueryMiddleWare } from 'src/middlewares/product_query.middleware';
+import { UploadFile } from 'src/middlewares/uploadimage.middleware';
 @Module({
   imports: [MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }])],
   controllers: [ProductController],
@@ -20,5 +21,8 @@ export class ProductModule implements NestModule {
       .forRoutes(ProductController);
     //  .forRoutes({ path: 'cats', method: RequestMethod.GET });
     // có thể tùy chọn path hoặc method
+    consumer.apply(UploadFile).forRoutes({ path: '/product/insert', method: RequestMethod.POST });
+
+
   }
 }

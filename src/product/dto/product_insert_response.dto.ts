@@ -1,4 +1,4 @@
-export class ProductInsertResponseDTO{
+export class ProductInsertResponseDTO {
     status: Boolean;
     message: String;
 }
